@@ -21,7 +21,6 @@ func _physics_process(delta):
 		collision.get_collider().Damage(1)
 
 func start_ball():
-	position = start_pos
 	randomize()
 	velocity = (Vector2(randf_range(-1, 1), randf_range(-.1, -1)).normalized())
 
