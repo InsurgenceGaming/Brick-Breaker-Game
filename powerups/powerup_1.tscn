@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxpuc64dpn8w2"]
+
+[ext_resource type="Texture2D" uid="uid://ighavtmj74h3" path="res://powerups/Sprites/tile_0044.png" id="1_0vjvc"]
+[ext_resource type="Script" path="res://powerups/Ball_Spawner.gd" id="1_t71hf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w22w"]
+size = Vector2(15, 14)
+
+[node name="Powerup1" type="Area2D"]
+script = ExtResource("1_t71hf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0vjvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_0w22w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

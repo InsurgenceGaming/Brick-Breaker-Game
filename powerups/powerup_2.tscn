@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cds23kligmn8n"]
+
+[ext_resource type="Texture2D" uid="uid://f13ksa0qqqxx" path="res://powerups/Sprites/tile_0067.png" id="1_anvvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w22w"]
+size = Vector2(15, 14)
+
+[node name="Powerup1" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_anvvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_0w22w")
