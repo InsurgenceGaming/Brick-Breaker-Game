@@ -6,6 +6,9 @@ extends Area2D
 func _on_body_entered(body):
 	if body.is_in_group("paddle"):
 		ball_spawner(amount_to_spawn,body)
+		queue_free()
+func _physics_process(delta):
+	position.y += 60 * delta
 		
 func ball_spawner(amount,paddle_body):
 	for i in amount:
@@ -15,3 +18,4 @@ func ball_spawner(amount,paddle_body):
 		ball.start_ball()
 		ball.position = paddle_body.position
 		print("ball should be here")
+		

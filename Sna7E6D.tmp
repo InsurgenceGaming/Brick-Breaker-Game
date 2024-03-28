@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cds23kligmn8n" path="res://Scenes/powerup_2.tscn" id="4_7u42k"]
 [ext_resource type="Script" path="res://Player.gd" id="5_etkrs"]
 [ext_resource type="PackedScene" uid="uid://48e2pas7e3wt" path="res://Scenes/powerup_3.tscn" id="5_pdw5d"]
-[ext_resource type="Texture2D" uid="uid://dnjfdnte4wenp" path="res://powerups/Sprites/fuck.png" id="6_ekd3f"]
 [ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="6_xg7su"]
 [ext_resource type="Script" path="res://scripts/Floor.gd" id="7_3s2dd"]
+[ext_resource type="Texture2D" uid="uid://pkl5kwwwneh2" path="res://Sprite-0001.png" id="7_wnn3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb2tp"]
 size = Vector2(20, 5)
@@ -26,37 +26,32 @@ size = Vector2(34, 3)
 script = ExtResource("1_rbcb8")
 
 [node name="Powerup1" parent="." instance=ExtResource("3_xy1ak")]
-position = Vector2(52, 78)
-amount_to_spawn = 3
-
-[node name="Powerup2" parent="." instance=ExtResource("3_xy1ak")]
-position = Vector2(51, -58)
+position = Vector2(52, -62)
+new_ball = ExtResource("6_xg7su")
 amount_to_spawn = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
 [node name="Brick" type="RigidBody2D" parent="." groups=["Brick"]]
-position = Vector2(0, -57)
+position = Vector2(0, 69)
 input_pickable = true
 gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true
 script = ExtResource("1_h2ogm")
 PowerUps = [ExtResource("3_xy1ak"), ExtResource("4_7u42k"), ExtResource("5_pdw5d")]
+Hits_to_break = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brick"]
 shape = SubResource("RectangleShape2D_jb2tp")
 
 [node name="Sprite-0001" type="Sprite2D" parent="Brick"]
-texture_filter = 6
-texture = ExtResource("6_ekd3f")
-hframes = 6
-frame = 5
+texture_filter = 1
+texture = ExtResource("7_wnn3e")
 
 [node name="Ball" parent="." instance=ExtResource("6_xg7su")]
-wall_min_slide_angle = 0.0
-platform_on_leave = 1
+Ball_SPEED = 100
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -87,10 +82,7 @@ shape = SubResource("RectangleShape2D_ui0ej")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("camera") groups=["paddle"]]
 position = Vector2(0, 80)
-collision_mask = 2
 motion_mode = 1
-wall_min_slide_angle = 0.0
-platform_floor_layers = 0
 script = ExtResource("5_etkrs")
 camera = NodePath("../Camera2D")
 

@@ -55,8 +55,6 @@ hframes = 6
 frame = 5
 
 [node name="Ball" parent="." instance=ExtResource("6_xg7su")]
-wall_min_slide_angle = 0.0
-platform_on_leave = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -87,10 +85,8 @@ shape = SubResource("RectangleShape2D_ui0ej")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("camera") groups=["paddle"]]
 position = Vector2(0, 80)
-collision_mask = 2
 motion_mode = 1
-wall_min_slide_angle = 0.0
-platform_floor_layers = 0
+wall_min_slide_angle = 3.14159
 script = ExtResource("5_etkrs")
 camera = NodePath("../Camera2D")
 
