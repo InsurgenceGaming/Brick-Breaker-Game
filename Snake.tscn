@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/Brick.gd" id="1_h2ogm"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_rbcb8"]
-[ext_resource type="PackedScene" uid="uid://cxpuc64dpn8w2" path="res://Scenes/powerup_1.tscn" id="3_xy1ak"]
-[ext_resource type="PackedScene" uid="uid://cds23kligmn8n" path="res://Scenes/powerup_2.tscn" id="4_7u42k"]
+[ext_resource type="PackedScene" path="res://Scenes/powerup_1.tscn" id="3_xy1ak"]
+[ext_resource type="PackedScene" path="res://Scenes/powerup_2.tscn" id="4_7u42k"]
 [ext_resource type="Script" path="res://Player.gd" id="5_etkrs"]
-[ext_resource type="PackedScene" uid="uid://48e2pas7e3wt" path="res://Scenes/powerup_3.tscn" id="5_pdw5d"]
+[ext_resource type="PackedScene" path="res://Scenes/powerup_3.tscn" id="5_pdw5d"]
 [ext_resource type="Texture2D" uid="uid://dnjfdnte4wenp" path="res://powerups/Sprites/fuck.png" id="6_ekd3f"]
 [ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="6_xg7su"]
 [ext_resource type="Script" path="res://scripts/Floor.gd" id="7_3s2dd"]
@@ -49,7 +49,7 @@ PowerUps = [ExtResource("3_xy1ak"), ExtResource("4_7u42k"), ExtResource("5_pdw5d
 shape = SubResource("RectangleShape2D_jb2tp")
 
 [node name="Sprite-0001" type="Sprite2D" parent="Brick"]
-texture_filter = 6
+texture_filter = 1
 texture = ExtResource("6_ekd3f")
 hframes = 6
 frame = 5
