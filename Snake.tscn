@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://Player.gd" id="5_etkrs"]
 [ext_resource type="PackedScene" uid="uid://48e2pas7e3wt" path="res://Scenes/powerup_3.tscn" id="5_pdw5d"]
 [ext_resource type="Texture2D" uid="uid://dnjfdnte4wenp" path="res://powerups/Sprites/fuck.png" id="6_ekd3f"]
-[ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="6_xg7su"]
 [ext_resource type="Script" path="res://scripts/Floor.gd" id="7_3s2dd"]
+[ext_resource type="PackedScene" uid="uid://d11ubo3o6jok0" path="res://Scenes/Ball.tscn" id="9_4yeab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb2tp"]
 size = Vector2(20, 5)
@@ -27,10 +27,12 @@ script = ExtResource("1_rbcb8")
 
 [node name="Powerup1" parent="." instance=ExtResource("3_xy1ak")]
 position = Vector2(52, 78)
+new_ball = ExtResource("9_4yeab")
 amount_to_spawn = 3
 
 [node name="Powerup2" parent="." instance=ExtResource("3_xy1ak")]
 position = Vector2(51, -58)
+new_ball = ExtResource("9_4yeab")
 amount_to_spawn = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -53,10 +55,6 @@ texture_filter = 6
 texture = ExtResource("6_ekd3f")
 hframes = 6
 frame = 5
-
-[node name="Ball" parent="." instance=ExtResource("6_xg7su")]
-wall_min_slide_angle = 0.0
-platform_on_leave = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -99,6 +97,15 @@ mesh = SubResource("BoxMesh_xcupx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_baoih")
+
+[node name="Ball" parent="." instance=ExtResource("9_4yeab")]
+collision_layer = 14
+collision_priority = 0.0
+gravity_scale = 0.25
+freeze = true
+linear_damp = 0.0
+angular_velocity = 0.174533
+angular_damp_mode = 1
 
 [connection signal="mouse_entered" from="Brick" to="Brick" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Brick" to="Brick" method="_on_mouse_exited"]

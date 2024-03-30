@@ -1,15 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxpuc64dpn8w2"]
+[gd_scene load_steps=8 format=3 uid="uid://cxpuc64dpn8w2"]
 
 [ext_resource type="Texture2D" uid="uid://ighavtmj74h3" path="res://powerups/Sprites/tile_0044.png" id="1_0vjvc"]
 [ext_resource type="Script" path="res://scripts/Ball_Spawner.gd" id="1_t71hf"]
-[ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="2_mrwy3"]
+[ext_resource type="Script" path="res://scripts/Ball.gd" id="2_a7ew6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i8iko"]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tgnn5"]
+radius = 3.0
+
+[sub_resource type="PackedScene" id="PackedScene_lsfxm"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Ball", "position", "disable_mode", "collision_layer", "motion_mode", "platform_floor_layers", "script", "Ball_SPEED", "CharacterBody2D", "MeshInstance2D", "mesh", "CollisionShape2D", "shape"),
+"node_count": 3,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 8, 0, -1, 7, 1, 0, 2, 1, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 1, 0, 0, 0, 9, 9, -1, 1, 10, 6, 0, 0, 0, 11, 11, -1, 1, 12, 7, 0),
+"variants": [Vector2(0, 26), 2, 1, 4294901760, ExtResource("2_a7ew6"), 100, SubResource("SphereMesh_i8iko"), SubResource("CircleShape2D_tgnn5")],
+"version": 3
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w22w"]
 size = Vector2(10, 10)
 
 [node name="Powerup1" type="Area2D"]
 script = ExtResource("1_t71hf")
-new_ball = ExtResource("2_mrwy3")
+new_ball = SubResource("PackedScene_lsfxm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0vjvc")

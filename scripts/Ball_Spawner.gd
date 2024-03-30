@@ -7,6 +7,7 @@ func _on_body_entered(body):
 	if body.is_in_group("paddle"):
 		ball_spawner(amount_to_spawn,body)
 		queue_free()
+		print("the spawn script ran")
 func _physics_process(delta):
 	position.y += 60 * delta
 		

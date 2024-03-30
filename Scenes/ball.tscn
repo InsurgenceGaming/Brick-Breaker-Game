@@ -1,25 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://6jcdjtkjriy1"]
+[gd_scene load_steps=5 format=3 uid="uid://d11ubo3o6jok0"]
 
-[ext_resource type="Script" path="res://scripts/Ball.gd" id="1_t7n1v"]
+[ext_resource type="Script" path="res://scripts/Ball.gd" id="1_l7r0b"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_i8iko"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vsgde"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7rlid"]
+radius = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_a4wp5"]
 radius = 3.0
 height = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tgnn5"]
-radius = 3.0
-
-[node name="Ball" type="CharacterBody2D" groups=["Ball"]]
-position = Vector2(0, 26)
-disable_mode = 2
-collision_layer = 2
-motion_mode = 1
-platform_floor_layers = 4294901760
-script = ExtResource("1_t7n1v")
-Ball_SPEED = 100
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-mesh = SubResource("SphereMesh_i8iko")
+[node name="ball" type="RigidBody2D"]
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_vsgde")
+gravity_scale = 0.0
+max_contacts_reported = 3
+contact_monitor = true
+linear_damp_mode = 1
+linear_damp = 100.0
+script = ExtResource("1_l7r0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_tgnn5")
+shape = SubResource("CircleShape2D_7rlid")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_a4wp5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

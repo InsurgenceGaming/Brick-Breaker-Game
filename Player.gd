@@ -19,6 +19,7 @@ func _ready():
 	camera_rect = camera.get_viewport_rect()
 	halved_paddle = $CollisionShape2D.shape.get_rect().size.x / 4 * scale.x
 	ball.position = position
+	ball.position.y = lock_y-5
 
 func _process(delta):
 	position.y = lock_y
