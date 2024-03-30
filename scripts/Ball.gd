@@ -21,6 +21,9 @@ func _physics_process(delta):
 		velocity.y = -.8
 		collision_layer = 0 
 		collision_mask = 0 
+		await get_tree().create_timer(.5).timeout
+		collision_layer = 2
+		collision_mask = 1
 		# add a timer here and when the timer runs out reset the collision layer/mask to the correct settings
 	if collision.get_collider().is_in_group("Brick"):
 		collision.get_collider().Damage(1)
