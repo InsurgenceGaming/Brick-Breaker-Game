@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Paddle
 
-
+var Lives : int = 3
 var camera_rect : Rect2
 var halved_paddle : float
 @export var camera: Camera2D

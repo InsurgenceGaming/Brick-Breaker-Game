@@ -21,7 +21,7 @@ func _ready():
 
 func Damage(DMG):
 	Hits_to_break -= DMG
-	if Hits_to_break == 0:
+	if Hits_to_break >= 0:
 		print("Pre_spawn")
 		for i in 1:
 			var picked = PowerUps.pick_random()

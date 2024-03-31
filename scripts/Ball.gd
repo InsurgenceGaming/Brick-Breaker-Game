@@ -3,8 +3,8 @@ extends CharacterBody2D
 class_name Ball
 
 const VELCOITY_MAX = 50
-@export var Ball_SPEED = 20
-
+@export var Ball_SPEED = 100
+var Ball_damage : int = 1
 var start_pos: Vector2
 
 func _ready():
@@ -26,7 +26,7 @@ func _physics_process(delta):
 		collision_mask = 1
 		# add a timer here and when the timer runs out reset the collision layer/mask to the correct settings
 	if collision.get_collider().is_in_group("Brick"):
-		collision.get_collider().Damage(1)
+		collision.get_collider().Damage(Ball_damage)
 
 func start_ball():
 	randomize()

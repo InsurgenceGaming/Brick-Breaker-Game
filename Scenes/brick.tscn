@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Brick.gd" id="1_aqoln"]
 [ext_resource type="PackedScene" uid="uid://cxpuc64dpn8w2" path="res://Scenes/powerup_1.tscn" id="2_sihfr"]
-[ext_resource type="PackedScene" uid="uid://cds23kligmn8n" path="res://Scenes/powerup_2.tscn" id="3_asjnc"]
+[ext_resource type="PackedScene" uid="uid://cds23kligmn8n" path="res://Scenes/Shelved_powerup.tscn" id="3_asjnc"]
 [ext_resource type="PackedScene" uid="uid://48e2pas7e3wt" path="res://Scenes/powerup_3.tscn" id="4_nt3u0"]
 [ext_resource type="Texture2D" uid="uid://pkl5kwwwneh2" path="res://Sprite-0001.png" id="5_4n6ap"]
 
