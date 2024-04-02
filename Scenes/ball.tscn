@@ -16,7 +16,6 @@ collision_layer = 2
 motion_mode = 1
 platform_floor_layers = 4294901760
 script = ExtResource("1_t7n1v")
-Ball_SPEED = 100
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 mesh = SubResource("SphereMesh_i8iko")

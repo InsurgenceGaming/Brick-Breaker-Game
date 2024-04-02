@@ -12,9 +12,6 @@ func _on_body_entered(body):
 		if balls_remaining.size() == 0:
 			print("No balls remain")
 
-		#body.queue_free()
-
-
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Powerups"):
 		area.remove_from_group("Powerups")

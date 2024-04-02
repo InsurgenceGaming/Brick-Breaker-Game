@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Player.gd" id="5_etkrs"]
 [ext_resource type="PackedScene" uid="uid://48e2pas7e3wt" path="res://Scenes/powerup_3.tscn" id="5_pdw5d"]
 [ext_resource type="Texture2D" uid="uid://dnjfdnte4wenp" path="res://powerups/Sprites/fuck.png" id="6_ekd3f"]
-[ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/Ball.tscn" id="6_xg7su"]
+[ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="6_xg7su"]
 [ext_resource type="Script" path="res://scripts/Floor.gd" id="7_3s2dd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb2tp"]
@@ -19,8 +19,9 @@ size = Vector2(2, 172)
 [sub_resource type="BoxMesh" id="BoxMesh_xcupx"]
 size = Vector3(34, 3, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_baoih"]
-size = Vector2(34, 3)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ky0u8"]
+radius = 2.0
+height = 34.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rbcb8")
@@ -85,12 +86,14 @@ wall_min_slide_angle = 0.0
 platform_floor_layers = 0
 script = ExtResource("5_etkrs")
 camera = NodePath("../Camera2D")
+new_ball = ExtResource("6_xg7su")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
 mesh = SubResource("BoxMesh_xcupx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_baoih")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ky0u8")
 
 [node name="Powerup1" parent="." instance=ExtResource("4_7u42k")]
 position = Vector2(0, 12)

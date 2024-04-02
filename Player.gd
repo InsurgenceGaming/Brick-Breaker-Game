@@ -30,18 +30,28 @@ func _process(delta):
 	elif global_position.x + halved_paddle > camera_end_x:
 		global_position.x = camera_end_x - halved_paddle
 	
-func _physics_process(delta):
-	move_and_collide(SPEED * direction * delta)	
-func _input(event):
+func _physics_process(delta):	
 	if Input.is_action_pressed("ui_left"):
-		direction = Vector2.LEFT
+		velocity = Vector2.LEFT * SPEED
 	elif  Input.is_action_pressed("ui_right"):
-		direction = Vector2.RIGHT
+		velocity = Vector2.RIGHT  * SPEED
 	else:
-		direction = Vector2.ZERO
-	if direction != Vector2.ZERO and !Ball_spawned:
+		velocity = Vector2.ZERO
+	if velocity != Vector2.ZERO and !Ball_spawned:
 		ball.start_ball()
 		Ball_spawned = true
+	move_and_slide()
+
 	
+@export var new_ball : PackedScene
+func _input(event):
+	if Input.is_key_pressed(KEY_SPACE):
+		var ball = new_ball.instantiate()
+		print(ball)
+		get_tree().root.add_child(ball)
+		ball.start_ball()
+		ball.position = position
+		ball.position.y + 10
+		print("ball should be here")
 
 
