@@ -6,7 +6,7 @@ var Lives : int = 3
 var camera_rect : Rect2
 var halved_paddle : float
 @export var camera: Camera2D
-const SPEED = 100.0
+const SPEED = 100
 var direction = Vector2.ZERO
 var Ball_spawned :bool = false
 var lock_y
@@ -30,9 +30,10 @@ func _process(delta):
 	elif global_position.x + halved_paddle > camera_end_x:
 		global_position.x = camera_end_x - halved_paddle
 	
-func _physics_process(delta):	
+func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity = Vector2.LEFT * SPEED
+		print(velocity)
 	elif  Input.is_action_pressed("ui_right"):
 		velocity = Vector2.RIGHT  * SPEED
 	else:

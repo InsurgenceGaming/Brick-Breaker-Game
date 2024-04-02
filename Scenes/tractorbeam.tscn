@@ -3,16 +3,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvqil"]
 size = Vector2(4, 167)
 
-[node name="Tractorbeam" type="Node2D"]
+[node name="Tractorbeam" type="Node2D" groups=["TractorBeam"]]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["TractorBeam"]]
 position = Vector2(-11, -2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" groups=["TractorBeam"]]
 shape = SubResource("RectangleShape2D_hvqil")
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." groups=["TractorBeam"]]
 position = Vector2(11, -2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" groups=["TractorBeam"]]
 shape = SubResource("RectangleShape2D_hvqil")

@@ -7,6 +7,7 @@ const VELCOITY_MAX = 50
 var Ball_damage : int = 1
 var start_pos: Vector2
 var collided_with_paddle : bool = false
+var collided_with_Beam : bool = false
 
 func _ready():
 	start_pos = position
@@ -26,8 +27,18 @@ func _physics_process(delta):
 		collided_with_paddle = false
 		#print(collision.get_angle())
 		#print(collided_with_paddle)
-	elif !collision.get_collider().is_in_group("paddle"):
+	elif collision.get_collider().is_in_group("TractorBeam") && !collided_with_Beam:
 		velocity = velocity.bounce(collision.get_normal())
+		collided_with_Beam = true
+		await get_tree().create_timer(.1).timeout
+		collided_with_Beam = false
+		print(collided_with_Beam)
+		print(velocity)
+	elif !collision.get_collider().is_in_group("paddle") && !collision.get_collider().is_in_group("TractorBeam"):
+		velocity = velocity.bounce(collision.get_normal())
+		
+		
+	
 	if collision.get_collider().is_in_group("Brick"):
 		collision.get_collider().Damage(Ball_damage)
 		
