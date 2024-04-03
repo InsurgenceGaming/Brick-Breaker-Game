@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+@onready var paddle = $"../Player"
 @export var PowerUps = []
 @export var Hits_to_break : int
 
@@ -21,5 +22,6 @@ func Damage(DMG):
 			picked_object.position.y = position.y
 			picked_object.position.x = position.x
 		queue_free()
+		paddle.SPEED += 10
 	else:
 		print(Hits_to_break)

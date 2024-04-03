@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 class_name Paddle
 
+@export var Lives_HUD : Label
 var Lives : int = 3
 var camera_rect : Rect2
 var halved_paddle : float
 @export var camera: Camera2D
-const SPEED = 300
+var SPEED = 300
 var direction = Vector2.ZERO
 var Ball_spawned :bool = false
 var lock_y
@@ -16,6 +17,7 @@ var fire_ball : bool = false
 
 
 func _ready():
+	Lives_HUD.text = str("Lives: ", Lives)
 	lock_y = position.y
 	camera_rect = camera.get_viewport_rect()
 	halved_paddle = $CollisionShape2D.shape.get_rect().size.x / 2 * scale.x
@@ -44,11 +46,16 @@ func _physics_process(delta):
 		print(Ball_spawned)
 	move_and_slide()
 
-
+func Lives_added():
+	Lives += 1
+	Lives_HUD.text = str("Lives: ", Lives)
+	
 
 func Lives_lost(lost_lives):
 	if Lives == 0:
-		print("Game_over")
+		await get_tree().create_timer(5.0).timeout
+		get_tree().quit()
+		
 	else: 
 		Lives -= lost_lives
 		Ball_spawned = false
@@ -62,6 +69,7 @@ func Lives_lost(lost_lives):
 		ball.position.x = 0
 		ball.position.y = 282
 		ball.velocity = Vector2(0,0)
+		Lives_HUD.text = str("Lives: ", Lives)
 		for Power in get_tree().get_nodes_in_group("Powerups"):
 			Power.queue_free()
 			Power.remove_from_group("Powerups")

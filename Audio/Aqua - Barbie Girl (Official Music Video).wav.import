@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjodak6kents"
+path="res://.godot/imported/Aqua - Barbie Girl (Official Music Video).wav-9b068bd4952e5ba6060873ea82f97b1e.sample"
+
+[deps]
+
+source_file="res://Audio/Aqua - Barbie Girl (Official Music Video).wav"
+dest_files=["res://.godot/imported/Aqua - Barbie Girl (Official Music Video).wav-9b068bd4952e5ba6060873ea82f97b1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

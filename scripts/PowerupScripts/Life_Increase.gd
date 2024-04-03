@@ -5,7 +5,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.is_in_group("paddle"):
-		body.Lives += 1
+		body.Lives_added()
 		print(body.Lives)
 		remove_from_group("Powerups")
 		queue_free()
