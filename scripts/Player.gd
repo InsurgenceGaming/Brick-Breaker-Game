@@ -33,26 +33,44 @@ func _process(delta):
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity = Vector2.LEFT * SPEED
-		print(velocity)
 	elif  Input.is_action_pressed("ui_right"):
 		velocity = Vector2.RIGHT  * SPEED
 	else:
 		velocity = Vector2.ZERO
-	if velocity != Vector2.ZERO and !Ball_spawned:
+	if velocity != Vector2.ZERO and !Ball_spawned and is_instance_valid(ball):
 		ball.start_ball()
 		Ball_spawned = true
+		print(Ball_spawned)
 	move_and_slide()
 
+
+func Lives_lost(lost_lives):
+	if Lives == 0:
+		print("Game_over")
+	else: 
+		Lives -= lost_lives
+		Ball_spawned = false
+		print(Ball_spawned)
+		position.x = Vector2.ZERO.x
+		var ball = new_ball.instantiate()
+		print(ball)
+		get_node("/root/Node2D").add_child(ball)
+		ball.name = "Ball"
+		ball.start_ball()
+		ball.position.x = 0
+		ball.position.y = 75
+		print("ball should be here")
+	
 	
 @export var new_ball : PackedScene
 func _input(event):
 	if Input.is_key_pressed(KEY_SPACE):
 		var ball = new_ball.instantiate()
 		print(ball)
-		get_tree().root.add_child(ball)
+		get_node("/root/Node2D").add_child(ball)
 		ball.start_ball()
 		ball.position = position
-		ball.position.y + 10
+		ball.position.y + 15
 		print("ball should be here")
 
 

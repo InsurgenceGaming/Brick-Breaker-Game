@@ -15,7 +15,7 @@ func ball_spawner(amount,paddle_body):
 	for i in amount:
 		var ball = new_ball.instantiate()
 		print(ball)
-		get_tree().root.add_child(ball)
+		get_node("/root/Node2D").add_child(ball)
 		ball.start_ball()
 		ball.position = paddle_body.position
 		print("ball should be here")

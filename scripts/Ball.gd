@@ -27,13 +27,6 @@ func _physics_process(delta):
 		collided_with_paddle = false
 		#print(collision.get_angle())
 		#print(collided_with_paddle)
-	elif collision.get_collider().is_in_group("TractorBeam") && !collided_with_Beam:
-		velocity = velocity.bounce(collision.get_normal())
-		collided_with_Beam = true
-		await get_tree().create_timer(.1).timeout
-		collided_with_Beam = false
-		print(collided_with_Beam)
-		print(velocity)
 	elif !collision.get_collider().is_in_group("paddle") && !collision.get_collider().is_in_group("TractorBeam"):
 		velocity = velocity.bounce(collision.get_normal())
 		

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxpuc64dpn8w2"]
 
 [ext_resource type="Texture2D" uid="uid://ighavtmj74h3" path="res://powerups/Sprites/tile_0044.png" id="1_0vjvc"]
-[ext_resource type="Script" path="res://scripts/Ball_Spawner.gd" id="1_t71hf"]
-[ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/Ball.tscn" id="2_mrwy3"]
+[ext_resource type="Script" path="res://scripts/PowerupScripts/Ball_Spawner.gd" id="1_t71hf"]
+[ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="2_mrwy3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w22w"]
 size = Vector2(10, 10)

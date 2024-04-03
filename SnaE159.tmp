@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdunmcx33xecr"]
+[gd_scene load_steps=15 format=3 uid="uid://bdunmcx33xecr"]
 
 [ext_resource type="Script" path="res://scripts/Brick.gd" id="1_h2ogm"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_rbcb8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dnjfdnte4wenp" path="res://powerups/Sprites/fuck.png" id="6_ekd3f"]
 [ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="6_xg7su"]
 [ext_resource type="Script" path="res://scripts/Floor.gd" id="7_3s2dd"]
+[ext_resource type="PackedScene" uid="uid://bvjnep46pfx3q" path="res://Scenes/Powerups/cannon.tscn" id="10_birnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb2tp"]
 size = Vector2(20, 5)
@@ -49,7 +50,6 @@ hframes = 6
 frame = 5
 
 [node name="Ball" parent="." instance=ExtResource("6_xg7su")]
-position = Vector2(0, 75)
 wall_min_slide_angle = 0.0
 platform_on_leave = 1
 
@@ -97,6 +97,10 @@ mesh = SubResource("BoxMesh_xcupx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ky0u8")
+
+[node name="Cannon" parent="Player" instance=ExtResource("10_birnc")]
+position = Vector2(0, -2)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="mouse_entered" from="Brick" to="Brick" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Brick" to="Brick" method="_on_mouse_exited"]

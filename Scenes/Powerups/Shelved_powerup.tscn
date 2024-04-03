@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cds23kligmn8n"]
 
 [ext_resource type="Texture2D" uid="uid://f13ksa0qqqxx" path="res://powerups/Sprites/tile_0067.png" id="1_anvvu"]
-[ext_resource type="Script" path="res://scripts/Tractor_beam.gd" id="1_qg4nf"]
+[ext_resource type="Script" path="res://scripts/PowerupScripts/Tractor_beam.gd" id="1_qg4nf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w22w"]
 size = Vector2(15, 14)

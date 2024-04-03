@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://du8eec8k1ndyq"]
+
+[ext_resource type="Script" path="res://Scenes/Powerups/shot.gd" id="1_0rhnx"]
+[ext_resource type="Texture2D" uid="uid://pkl5kwwwneh2" path="res://Sprite-0001.png" id="1_reykf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjqvt"]
+size = Vector2(5, 20)
+
+[node name="Shot" type="Area2D"]
+script = ExtResource("1_0rhnx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57154
+texture = ExtResource("1_reykf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kjqvt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
