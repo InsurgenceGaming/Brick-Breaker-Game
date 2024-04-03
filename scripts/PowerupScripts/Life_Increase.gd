@@ -10,5 +10,5 @@ func _on_body_entered(body):
 		remove_from_group("Powerups")
 		queue_free()
 func _physics_process(delta):
-	position.y += 60 * delta
+	position.y += 180 * delta
 		

@@ -9,7 +9,7 @@ func _on_body_entered(body):
 		queue_free()
 		remove_from_group("Powerups")
 func _physics_process(delta):
-	position.y += 60 * delta
+	position.y += 180 * delta
 		
 func ball_spawner(amount,paddle_body):
 	for i in amount:
@@ -18,5 +18,7 @@ func ball_spawner(amount,paddle_body):
 		get_node("/root/Node2D").add_child(ball)
 		ball.start_ball()
 		ball.position = paddle_body.position
+		ball.position.y =278
+		print(ball.position)
 		print("ball should be here")
 		

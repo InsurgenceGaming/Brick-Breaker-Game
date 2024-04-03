@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="1_t7n1v"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_i8iko"]
-radius = 3.0
-height = 6.0
+radius = 12.0
+height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tgnn5"]
-radius = 3.0
+radius = 12.0
 
 [node name="Ball" type="CharacterBody2D" groups=["Ball"]]
 position = Vector2(0, 26)

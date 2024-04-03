@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://du8eec8k1ndyq"]
 
-[ext_resource type="Script" path="res://scripts/shot.gd" id="1_0rhnx"]
+[ext_resource type="Script" path="res://scripts/shot.gd" id="1_0aqbv"]
 [ext_resource type="Texture2D" uid="uid://pkl5kwwwneh2" path="res://Sprite-0001.png" id="1_reykf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjqvt"]
-size = Vector2(5, 20)
+size = Vector2(20, 80)
 
 [node name="Shot" type="Area2D"]
-script = ExtResource("1_0rhnx")
+script = ExtResource("1_0aqbv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.57154

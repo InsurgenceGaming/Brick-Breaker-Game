@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Fire_ball.gd" id="1_hi2b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of2oy"]
-size = Vector2(34, 4)
+size = Vector2(136, 12)
 
 [node name="Node2D" type="Area2D"]
 collision_mask = 2

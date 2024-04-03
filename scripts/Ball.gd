@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Ball
 
 const VELCOITY_MAX = 50
-@export var Ball_SPEED = 100
+@export var Ball_SPEED = 400
 var Ball_damage : int = 1
 var start_pos: Vector2
 var collided_with_paddle : bool = false

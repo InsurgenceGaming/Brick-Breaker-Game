@@ -1,7 +1,7 @@
 extends Area2D
 
 func _physics_process(delta):
-	position.y -= 80 * delta
+	position.y -= 320 * delta
 	
 
 

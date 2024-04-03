@@ -6,7 +6,7 @@ var Lives : int = 3
 var camera_rect : Rect2
 var halved_paddle : float
 @export var camera: Camera2D
-const SPEED = 100
+const SPEED = 300
 var direction = Vector2.ZERO
 var Ball_spawned :bool = false
 var lock_y
@@ -18,13 +18,13 @@ var fire_ball : bool = false
 func _ready():
 	lock_y = position.y
 	camera_rect = camera.get_viewport_rect()
-	halved_paddle = $CollisionShape2D.shape.get_rect().size.x / 4 * scale.x
+	halved_paddle = $CollisionShape2D.shape.get_rect().size.x / 2 * scale.x
 	ball.position = position
 
 func _process(delta):
 	position.y = lock_y
-	var camera_start_x = camera.position.x - camera_rect.size.x / 8
-	var camera_end_x = camera_start_x + camera_rect.size.x /4
+	var camera_start_x = camera.position.x - camera_rect.size.x / 2
+	var camera_end_x = camera_start_x + camera_rect.size.x
 	
 	if global_position.x - halved_paddle < camera_start_x:
 		global_position.x = camera_start_x + halved_paddle
@@ -60,7 +60,7 @@ func Lives_lost(lost_lives):
 		ball.name = "Ball"
 		ball.start_ball()
 		ball.position.x = 0
-		ball.position.y = 75
+		ball.position.y = 282
 		ball.velocity = Vector2(0,0)
 		for Power in get_tree().get_nodes_in_group("Powerups"):
 			Power.queue_free()
@@ -68,17 +68,18 @@ func Lives_lost(lost_lives):
 
 	 
 
-	
+var debug_mode : bool = false
 @export var new_ball : PackedScene
 func _input(event):
-	if Input.is_key_pressed(KEY_SPACE):
-		var ball = new_ball.instantiate()
-		print(ball)
-		get_node("/root/Node2D").add_child(ball)
-		ball.start_ball()
-		ball.position = position
-		ball.position.y + 15
-		print("ball should be here")
+	if Input.is_key_pressed(KEY_SPACE) and debug_mode:
+		for i in 999:
+			var ball = new_ball.instantiate()
+			print(ball)
+			get_node("/root/Node2D").add_child(ball)
+			ball.start_ball()
+			ball.position = position
+			ball.position.y = 282
+			print("ball should be here")
 
 
 

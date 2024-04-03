@@ -7,7 +7,7 @@ func _process(delta):
 		print(projectile)
 		get_node("/root/Node2D").add_child(projectile)
 		projectile.position.x = global_position.x
-		projectile.position.y = 78
+		projectile.position.y = 300
 		queue_free()
 		remove_from_group("Powerups")
 		print("Shot should be here")
