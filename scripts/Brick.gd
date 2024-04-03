@@ -13,13 +13,11 @@ func _ready():
 func Damage(DMG):
 	Hits_to_break -= DMG
 	if Hits_to_break <= 0:
-		for i in 1:
-			var picked = PowerUps.pick_random()
-			var picked_object = picked.instantiate()
-			get_node("/root/Node2D").add_child(picked_object)
-			picked_object.position.y = position.y
-			picked_object.position.x = position.x
-		print("Post Spawn")
+		var picked = PowerUps.pick_random()
+		var picked_object = picked.instantiate()
+		get_node("/root/Node2D").add_child(picked_object)
+		picked_object.position.y = position.y
+		picked_object.position.x = position.x
 		queue_free()
 	else:
 		print(Hits_to_break)

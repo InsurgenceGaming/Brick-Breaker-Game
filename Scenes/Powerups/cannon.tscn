@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://du8eec8k1ndyq" path="res://Scenes/Powerups/shot.tscn" id="2_3htbf"]
 [ext_resource type="Texture2D" uid="uid://byqrat8xdkhc7" path="res://icon.svg" id="2_jj8pe"]
 
-[node name="Cannon" type="Node2D"]
+[node name="Cannon" type="Node2D" groups=["Powerups"]]
 script = ExtResource("1_ujj1t")
 cannon_shot = ExtResource("2_3htbf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Powerups"]]
 position = Vector2(1.00001, 0)
 scale = Vector2(0.277344, 0.0859375)
 texture = ExtResource("2_jj8pe")

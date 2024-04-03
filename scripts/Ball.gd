@@ -8,6 +8,9 @@ var Ball_damage : int = 1
 var start_pos: Vector2
 var collided_with_paddle : bool = false
 var collided_with_Beam : bool = false
+var fire_ball = false
+
+
 
 func _ready():
 	start_pos = position
@@ -31,10 +34,12 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		
 		
-	
-	if collision.get_collider().is_in_group("Brick"):
+	if fire_ball and collision.get_collider().is_in_group("Brick"):
+		collision.get_collider().Damage(Ball_damage * 4)
+	elif collision.get_collider().is_in_group("Brick"):
 		collision.get_collider().Damage(Ball_damage)
-		
+
+
 
 func start_ball():
 	randomize()

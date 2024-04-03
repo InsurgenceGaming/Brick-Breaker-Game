@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmcwomha83frm"]
+
+[ext_resource type="Script" path="res://Fire_ball.gd" id="1_hi2b3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of2oy"]
+size = Vector2(34, 4)
+
+[node name="Node2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_hi2b3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_of2oy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

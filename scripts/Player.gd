@@ -12,6 +12,7 @@ var Ball_spawned :bool = false
 var lock_y
 @onready var ball = $"../Ball" as Ball
 
+var fire_ball : bool = false
 
 
 func _ready():
@@ -44,6 +45,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+
 func Lives_lost(lost_lives):
 	if Lives == 0:
 		print("Game_over")
@@ -52,15 +54,20 @@ func Lives_lost(lost_lives):
 		Ball_spawned = false
 		print(Ball_spawned)
 		position.x = Vector2.ZERO.x
-		var ball = new_ball.instantiate()
+		ball = new_ball.instantiate()
 		print(ball)
 		get_node("/root/Node2D").add_child(ball)
 		ball.name = "Ball"
 		ball.start_ball()
 		ball.position.x = 0
 		ball.position.y = 75
-		print("ball should be here")
-	
+		ball.velocity = Vector2(0,0)
+		for Power in get_tree().get_nodes_in_group("Powerups"):
+			Power.queue_free()
+			Power.remove_from_group("Powerups")
+
+	 
+
 	
 @export var new_ball : PackedScene
 func _input(event):
@@ -74,3 +81,10 @@ func _input(event):
 		print("ball should be here")
 
 
+
+
+
+
+
+func _on_body_entered(body):
+	print(body)
