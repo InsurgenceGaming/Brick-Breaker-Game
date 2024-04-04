@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bdunmcx33xecr"]
+[gd_scene load_steps=18 format=3 uid="uid://bdunmcx33xecr"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_rbcb8"]
 [ext_resource type="PackedScene" uid="uid://bxhuwdu4rmg38" path="res://Scenes/Powerups/Lives_powerup.tscn" id="5_5hjyc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6jcdjtkjriy1" path="res://Scenes/ball.tscn" id="6_xg7su"]
 [ext_resource type="Script" path="res://scripts/Floor.gd" id="7_3s2dd"]
 [ext_resource type="AudioStream" uid="uid://bjodak6kents" path="res://Audio/Aqua - Barbie Girl (Official Music Video).wav" id="7_4a43u"]
+[ext_resource type="Texture2D" uid="uid://4optwy7sdu73" path="res://rocket.png" id="8_k2t74"]
 [ext_resource type="PackedScene" uid="uid://behv4ibv2xlhy" path="res://Scenes/brick.tscn" id="10_ixju6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ui0ej"]
@@ -515,6 +516,10 @@ position = Vector2(-20, 231)
 stream = ExtResource("7_4a43u")
 volume_db = -20.0
 autoplay = true
+
+[node name="Rocket" type="Sprite2D" parent="."]
+position = Vector2(-11, 182)
+texture = ExtResource("8_k2t74")
 
 [connection signal="area_shape_entered" from="Barriers/Floor" to="Barriers/Floor" method="_on_area_shape_entered"]
 [connection signal="body_entered" from="Barriers/Floor" to="Barriers/Floor" method="_on_body_entered"]
