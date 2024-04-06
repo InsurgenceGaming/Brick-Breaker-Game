@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ci47c7b71ec"]
+
+[ext_resource type="Script" path="res://AudioSlider.gd" id="1_uqfer"]
+
+[node name="AudioSlider" type="HSlider"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_uqfer")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

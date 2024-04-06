@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvjnep46pfx3q"]
 
 [ext_resource type="Script" path="res://Cannon.gd" id="1_ujj1t"]
-[ext_resource type="PackedScene" uid="uid://du8eec8k1ndyq" path="res://Scenes/Powerups/shot.tscn" id="2_3htbf"]
+[ext_resource type="PackedScene" uid="uid://du8eec8k1ndyq" path="res://Scenes/Powerups/Rocket.tscn" id="2_3htbf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ydn2s"]
 size = Vector3(80, 40, 1)

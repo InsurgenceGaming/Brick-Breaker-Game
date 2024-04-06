@@ -1,6 +1,5 @@
 extends Area2D
 
-@export var new_ball : PackedScene
 @export var amount_to_spawn: int = 10
 
 func _on_body_entered(body):

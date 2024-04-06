@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hjuby1ypftny"
+path="res://.godot/imported/Can I get a Hoya sound (effect).wav-da13a66b6e6a8c4715001d7e3d68ae15.sample"
+
+[deps]
+
+source_file="res://scripts/Can I get a Hoya sound (effect).wav"
+dest_files=["res://.godot/imported/Can I get a Hoya sound (effect).wav-da13a66b6e6a8c4715001d7e3d68ae15.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://cotxjsaj8du6j"]
+
+[ext_resource type="Script" path="res://Main Menu.gd" id="1_vq38w"]
+[ext_resource type="PackedScene" uid="uid://bdunmcx33xecr" path="res://Snake.tscn" id="2_jtiho"]
+[ext_resource type="AudioStream" uid="uid://hjuby1ypftny" path="res://scripts/Can I get a Hoya sound (effect).wav" id="3_2xgep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mopn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0i4r"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vq38w")
+Game = ExtResource("2_jtiho")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2xgep")
+bus = &"SFX"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -64.5
+offset_right = 35.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Play"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5mopn")
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Settings"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j0i4r")
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Quit 
+"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
