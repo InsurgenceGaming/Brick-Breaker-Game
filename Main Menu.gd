@@ -1,7 +1,15 @@
 extends Control
 
 @export var Game : PackedScene
-
+@export var bus_name : String
+var bus_index : int
+func _ready():
+	var audio_settings = Settings.load_audio_settings()
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(audio_settings.Music)
+	)
+	print(audio_settings)
 
 func _on_play_pressed():
 	get_tree().change_scene_to_packed(Game)
