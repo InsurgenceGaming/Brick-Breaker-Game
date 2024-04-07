@@ -34,9 +34,9 @@ func _process(delta):
 		global_position.x = camera_end_x - halved_paddle
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("Paddle_move_left"):
 		velocity = Vector2.LEFT * SPEED
-	elif  Input.is_action_pressed("ui_right"):
+	elif  Input.is_action_pressed("Paddle_move_right"):
 		velocity = Vector2.RIGHT  * SPEED
 	else:
 		velocity = Vector2.ZERO

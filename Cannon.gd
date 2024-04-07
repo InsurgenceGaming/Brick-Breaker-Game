@@ -1,7 +1,7 @@
 extends Node2D
 @export var cannon_shot : PackedScene
 func _process(delta):
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("Shoot_powerup"):
 		print(position)
 		var projectile = cannon_shot.instantiate()
 		print(projectile)

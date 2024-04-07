@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddqulie4tvoxo"]
 
-[ext_resource type="Script" path="res://Audio.gd" id="1_3pncq"]
+[ext_resource type="Script" path="res://Scenes/Menus/Audio.gd" id="1_35b78"]
 [ext_resource type="AudioStream" uid="uid://bjodak6kents" path="res://Audio/Aqua - Barbie Girl (Official Music Video).wav" id="3_ffe1t"]
 [ext_resource type="PackedScene" uid="uid://d0ci47c7b71ec" path="res://Scenes/Menus/AudioSlider.tscn" id="3_sjgx6"]
 
@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3pncq")
+script = ExtResource("1_35b78")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
@@ -40,7 +40,7 @@ stream = ExtResource("3_ffe1t")
 autoplay = true
 bus = &"Music"
 
-[node name="AudioSlider" parent="." node_paths=PackedStringArray("spinbox") instance=ExtResource("3_sjgx6")]
+[node name="MusicVolumeSlider" parent="." node_paths=PackedStringArray("spinbox") instance=ExtResource("3_sjgx6")]
 layout_mode = 1
 offset_left = -101.0
 offset_top = 10.0
@@ -51,7 +51,7 @@ step = 0.001
 spinbox = NodePath("SpinBox")
 bus_name = "Music"
 
-[node name="Label" type="Label" parent="AudioSlider"]
+[node name="Label" type="Label" parent="MusicVolumeSlider"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -67,7 +67,7 @@ grow_vertical = 2
 text = "Music"
 metadata/_edit_use_anchors_ = true
 
-[node name="SpinBox" type="SpinBox" parent="AudioSlider"]
+[node name="SpinBox" type="SpinBox" parent="MusicVolumeSlider"]
 layout_mode = 0
 offset_left = 205.0
 offset_top = -6.0
@@ -77,4 +77,5 @@ theme = SubResource("Theme_fcvlq")
 alignment = 1
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="value_changed" from="AudioSlider/SpinBox" to="AudioSlider" method="_on_spin_box_value_changed"]
+[connection signal="drag_ended" from="MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
+[connection signal="value_changed" from="MusicVolumeSlider/SpinBox" to="MusicVolumeSlider" method="_on_spin_box_value_changed"]

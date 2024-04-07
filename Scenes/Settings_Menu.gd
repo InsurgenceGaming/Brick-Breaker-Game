@@ -8,7 +8,8 @@ func _on_audio_pressed():
 
 
 func _on_controls_pressed():
-	pass # Replace with function body.
+	pass #https://youtu.be/tfqJjDw0o7Y is the video to understand how to make settings save
+	
 
 
 func _on_back_pressed():
