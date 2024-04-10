@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg120vooixfo4"]
+
+[ext_resource type="Script" path="res://controls.gd" id="1_jglwd"]
+[ext_resource type="PackedScene" uid="uid://btsbadqga3qnk" path="res://ControlButton.tscn" id="2_dg3xu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jglwd")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -114.0
+offset_right = 176.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ActionList" instance=ExtResource("2_dg3xu")]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.641
+anchor_right = 0.501
+anchor_bottom = 0.641
+offset_left = -36.0
+offset_top = -15.368
+offset_right = 36.848
+offset_bottom = 15.632
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back
+"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

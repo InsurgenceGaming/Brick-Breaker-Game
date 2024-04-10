@@ -4,10 +4,10 @@
 [ext_resource type="AudioStream" uid="uid://bjodak6kents" path="res://Audio/Aqua - Barbie Girl (Official Music Video).wav" id="3_ffe1t"]
 [ext_resource type="PackedScene" uid="uid://d0ci47c7b71ec" path="res://Scenes/Menus/AudioSlider.tscn" id="3_sjgx6"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_47e3h"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_334n3"]
 
 [sub_resource type="Theme" id="Theme_fcvlq"]
-SpinBox/icons/updown = SubResource("CanvasTexture_47e3h")
+SpinBox/icons/updown = SubResource("CanvasTexture_334n3")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -33,7 +33,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Back
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ffe1t")
@@ -65,7 +64,6 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Music"
-metadata/_edit_use_anchors_ = true
 
 [node name="SpinBox" type="SpinBox" parent="MusicVolumeSlider"]
 layout_mode = 0
