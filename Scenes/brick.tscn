@@ -11,6 +11,7 @@
 size = Vector2(80, 20)
 
 [node name="Brick" type="StaticBody2D" groups=["Brick"]]
+modulate = Color(0, 1, 1, 1)
 position = Vector2(0, 69)
 input_pickable = true
 script = ExtResource("1_aqoln")

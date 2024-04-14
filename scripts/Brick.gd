@@ -1,12 +1,12 @@
 extends StaticBody2D
 
-@onready var paddle = $"../Player"
+@onready var paddle = $"../../Player"
 @export var PowerUps = []
 @export var Hits_to_break : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	print(paddle)
 	pass
 
 var one_in_10 = randi_range(1,10)
@@ -19,8 +19,8 @@ func Damage(DMG):
 			var picked = PowerUps.pick_random()
 			var picked_object = picked.instantiate()
 			get_node("/root/Node2D").add_child(picked_object)
-			picked_object.position.y = position.y
-			picked_object.position.x = position.x
+			picked_object.position.y = global_position.y
+			picked_object.position.x = global_position.x
 		queue_free()
 		paddle.SPEED += 10
 	else:
