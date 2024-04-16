@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjqvt"]
 size = Vector2(30, 58)
 
-[node name="Shot" type="Area2D"]
+[node name="Shot" type="Area2D" groups=["Powerups"]]
 script = ExtResource("1_kuv3a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Powerups"]]
 texture = ExtResource("2_heetw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Powerups"]]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_kjqvt")
 

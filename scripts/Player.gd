@@ -86,13 +86,11 @@ func New_stage():
 	ball.position.x = 0
 	ball.position.y = 282
 	ball.velocity = Vector2(0,0)
-	for Power in get_tree().get_nodes_in_group("Powerups"):
-		Power.queue_free()
-		Power.remove_from_group("Powerups")
+
 
 	 
 
-var debug_mode : bool = true
+var debug_mode : bool = false
 @export var new_ball : PackedScene
 func _input(event):
 	if Input.is_key_pressed(KEY_SPACE) and debug_mode:
