@@ -132,7 +132,6 @@ label_settings = SubResource("LabelSettings_ita7y")
 position = Vector2(-28, 257)
 
 [node name="Stage" type="Label" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -142,6 +141,7 @@ offset_right = 119.0
 offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 150

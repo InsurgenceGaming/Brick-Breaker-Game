@@ -10,6 +10,7 @@ size = Vector2(40, 40)
 [node name="BallPowerUp" type="Area2D" groups=["Powerups"]]
 script = ExtResource("1_t71hf")
 new_ball = ExtResource("2_mrwy3")
+amount_to_spawn = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0vjvc")

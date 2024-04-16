@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://behv4ibv2xlhy"]
+
+[ext_resource type="Script" path="res://scripts/Brick.gd" id="1_aqoln"]
+[ext_resource type="PackedScene" uid="uid://cxpuc64dpn8w2" path="res://Scenes/Powerups/Ball_powerup_1.tscn" id="2_sihfr"]
+[ext_resource type="PackedScene" uid="uid://cds23kligmn8n" path="res://Scenes/Powerups/Cannon_powerup.tscn" id="3_asjnc"]
+[ext_resource type="PackedScene" uid="uid://48e2pas7e3wt" path="res://Scenes/Powerups/Fire_ball_Powerup.tscn" id="4_nt3u0"]
+[ext_resource type="PackedScene" uid="uid://bxhuwdu4rmg38" path="res://Scenes/Powerups/Lives_powerup.tscn" id="5_m5vim"]
+[ext_resource type="Texture2D" uid="uid://l68r18gjdpsi" path="res://BrickSprite.png" id="6_puwnh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb2tp"]
+size = Vector2(80, 20)
+
+[node name="Brick" type="StaticBody2D" groups=["Brick"]]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(0, 69)
+input_pickable = true
+script = ExtResource("1_aqoln")
+PowerUps = [ExtResource("2_sihfr"), ExtResource("3_asjnc"), ExtResource("4_nt3u0"), ExtResource("5_m5vim")]
+Hits_to_break = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jb2tp")
+
+[node name="BrickSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("6_puwnh")

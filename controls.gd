@@ -8,8 +8,8 @@ var action_to_remap = null
 var remapping_button = null
 
 var input_actions = {
-	"Paddle_move_right": "Move Left",
-	"Paddle_move_left": "Move Right",
+	"Paddle_move_right": "Move Right",
+	"Paddle_move_left": "Move Left",
 	"Shoot_powerup": "Shoot Powerup"
 }
 

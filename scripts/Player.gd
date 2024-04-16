@@ -55,7 +55,6 @@ func Lives_lost(lost_lives):
 	if Lives == 0:
 		await get_tree().create_timer(5.0).timeout
 		get_tree().quit()
-		
 	else: 
 		Lives -= lost_lives
 		Ball_spawned = false
@@ -74,9 +73,26 @@ func Lives_lost(lost_lives):
 			Power.queue_free()
 			Power.remove_from_group("Powerups")
 
+func New_stage():
+	for ball in get_tree().get_nodes_in_group("Ball"):
+		ball.queue_free()
+		ball.remove_from_group("Ball")
+	Ball_spawned = false
+	position.x = Vector2.ZERO.x
+	ball = new_ball.instantiate()
+	get_node("/root/Node2D").add_child(ball)
+	ball.name = "Ball"
+	ball.start_ball()
+	ball.position.x = 0
+	ball.position.y = 282
+	ball.velocity = Vector2(0,0)
+	for Power in get_tree().get_nodes_in_group("Powerups"):
+		Power.queue_free()
+		Power.remove_from_group("Powerups")
+
 	 
 
-var debug_mode : bool = false
+var debug_mode : bool = true
 @export var new_ball : PackedScene
 func _input(event):
 	if Input.is_key_pressed(KEY_SPACE) and debug_mode:

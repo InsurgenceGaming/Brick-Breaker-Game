@@ -10,6 +10,7 @@ func _on_body_entered(body):
 		body.add_child(Add_cannon)
 		Add_cannon.position.y = global_position.y - 300
 		queue_free()
+		remove_from_group("Powerups")
 
 func _physics_process(delta):
 	position.y += 180 * delta
