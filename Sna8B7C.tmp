@@ -193,4 +193,3 @@ text = "Restart
 [connection signal="body_entered" from="Barriers/Floor" to="Barriers/Floor" method="_on_body_entered"]
 [connection signal="pressed" from="Quit" to="Player" method="_on_back_pressed"]
 [connection signal="pressed" from="Main Menu" to="Player" method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Restart" to="Player" method="_on_restart_pressed"]
